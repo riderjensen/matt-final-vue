@@ -8,7 +8,7 @@ import store from './store'
 Vue.use(vueResource)
 
 Vue.directive('upper', {
-  bind(el, binding) {
+  bind(el) {
     el.style.textTransform = 'uppercase';
   }
 })
@@ -20,7 +20,7 @@ Vue.directive('highlight', {
   // componenetUpdated hook - once component is updated with children
   // unbind hook - once directive is removed
 
-  bind(el, binding, vnode) {
+  bind(el, binding) {
     // el.style.backgroundColor = 'green';
     // el.style.backgroundColor = binding.value;
     if(binding.arg == 'background') {
