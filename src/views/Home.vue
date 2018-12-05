@@ -23,14 +23,20 @@
         </v-card-title>
       </v-card>
 
+      <div class="user-status">
+        <app-user-status :myStatus="status"></app-user-status>
+      <v-btn color="info" @click="changeStatus">Change Status</v-btn>
+      </div>
       </v-container>
 </template>
 
 <script>
+import UserStatus from '../components/UserStatus'
   export default {
 
     data() {
       return {
+        status: 'Logged In',
         cars: [
           {
             make: 'Mclaren',
@@ -63,13 +69,27 @@
       }
     },
 
-  directives: {
-    'local-upper': {
-      bind(el) {
-        el.style.textTransform = 'uppercase';
+    methods: {
+      changeStatus() {
+        if(this.status == 'Logged In') {
+          this.status = 'Logged Out';
+        } else {
+          this.status = 'Logged In'
+        }
       }
+    },
+
+    directives: {
+      'local-upper': {
+        bind(el) {
+          el.style.textTransform = 'uppercase';
+        }
+      }
+    },
+
+    components: {
+      'app-user-status': UserStatus
     }
-  }
     
   }
 </script>
@@ -92,6 +112,10 @@
   margin: 0 1%;
   margin-bottom: 20px;
   display: inline-block;
+}
+
+.user-status {
+  text-align: center;
 }
 
 </style>
