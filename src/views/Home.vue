@@ -1,13 +1,15 @@
 <template>
-  <HelloWorld />
+<div>
+  <v-container>
+    <v-layout>
+      <h1>Hello World</h1>
+    </v-layout>
+  </v-container>
+</div>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
-
   export default {
-    components: {
-      HelloWorld
-    }
+    
   }
 </script>
