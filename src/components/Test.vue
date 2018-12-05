@@ -1,9 +1,0 @@
-<template>
-  <div>
-    <v-container>
-      <v-layout>
-        <h1>Test</h1>
-      </v-layout>
-    </v-container>
-  </div>
-</template>
